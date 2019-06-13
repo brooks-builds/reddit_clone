@@ -13,6 +13,7 @@
 
 Route::get('/', 'indexController@index');
 Route::get('/comments/{id}', 'indexController@linkWithComments');
+Route::post('/comments', 'commentsController@store');
 
 Route::post('/links/{id}/upvote', 'linkController@upvote');
 Route::post('/links/{id}/downvote', 'linkController@downvote');
