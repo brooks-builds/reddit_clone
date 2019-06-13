@@ -7,6 +7,9 @@
     <title>@section('title', 'Laravel Reddit Clone')</title>
 </head>
 <body>
+    <h1><a href="/">Laravel Reddit Clone</a></h1>
+
+    <a href="/home">login</a>
     @section('main')
     @show
 </body>

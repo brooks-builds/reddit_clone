@@ -12,3 +12,8 @@
 */
 
 Route::get('/', 'indexController@index');
+Route::get('/comments/{id}', 'indexController@linkWithComments');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

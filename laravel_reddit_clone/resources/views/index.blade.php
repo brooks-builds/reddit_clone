@@ -1,15 +1,17 @@
 @extends('layout')
 
 @section('main')
-    <h1>Reddit Clone with Laravel</h1>
+    @isset($username)
+        <p>Welcome {{ $username }}</p>
+    @endisset
 
     @foreach($links as $link)
         <div>
             <button>up</button>
-            {{ $link['votes'] }}
+            {{ $link->votes }}
             <button>down</button>
-            <a href="{{ $link['link'] }}">{{ $link['text'] }}</a>
-            <a href="/comments/{{ $link['id'] }}">(comments)</a>
+            <a href="{{ $link->link }}">{{ $link->title }}</a>
+            <a href="/comments/{{ $link->id }}">(comments)</a>
         </div>
     @endforeach
 @endsection
