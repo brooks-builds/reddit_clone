@@ -1,17 +1,13 @@
 @extends('layout')
 
 @section('main')
-    @isset($username)
-        <p>Welcome {{ $username }}</p>
-    @endisset
-
-    @foreach($links as $link)
-        <div>
-            <button>up</button>
-            {{ $link->votes }}
-            <button>down</button>
+   @foreach($links as $link)
+    <div>
+            <hr>
+            @include('votes', ['link' => $link])
             <a href="{{ $link->link }}">{{ $link->title }}</a>
             <a href="/comments/{{ $link->id }}">(comments)</a>
+            <hr>
         </div>
     @endforeach
 @endsection

@@ -19,12 +19,15 @@ class indexController extends Controller
 
     function linkWithComments($id)
     {
+        $user = Auth::user();
         $link = Link::where(['id' => $id])->first();
         $comments = Comment::where(['link_id' => $id])
             ->join('users', ['users.id' => 'comments.user_id'])
             ->select('comments.*', 'users.name')
             ->get();
 
-        return view('one-link', ['link' => $link, 'comments' => $comments]);
+        return view('one-link', ['link' => $link,
+                                'comments' => $comments,
+                                'username' => $user->name]);
     }
 }

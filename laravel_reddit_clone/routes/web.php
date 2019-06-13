@@ -14,6 +14,9 @@
 Route::get('/', 'indexController@index');
 Route::get('/comments/{id}', 'indexController@linkWithComments');
 
+Route::post('/links/{id}/upvote', 'linkController@upvote');
+Route::post('/links/{id}/downvote', 'linkController@downvote');
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

@@ -8,8 +8,12 @@
 </head>
 <body>
     <h1><a href="/">Laravel Reddit Clone</a></h1>
+    @if($username)
+        <p>Welcome {{ $username }}</p>
+    @else
+        <a href="/home">login</a>
+    @endif
 
-    <a href="/home">login</a>
     @section('main')
     @show
 </body>
