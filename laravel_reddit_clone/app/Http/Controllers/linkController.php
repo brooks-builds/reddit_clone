@@ -11,7 +11,6 @@ class linkController extends Controller
 {
     function upvote($id)
     {
-        $user = Auth::user();
         $previousUrl = URL::previous();
 
         if(Auth::check())
@@ -24,7 +23,6 @@ class linkController extends Controller
 
     function downvote($id)
     {
-        $user = Auth::user();
         $previousUrl = URL::previous();
 
         if(Auth::check())
