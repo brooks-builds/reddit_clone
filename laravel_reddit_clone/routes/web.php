@@ -21,4 +21,6 @@ Route::post('/links', 'linkController@store');
 
 Auth::routes();
 
+Route::delete('/users/{id}', 'deleteAccountController@destroy');
+
 Route::get('/home', 'HomeController@index')->name('home');

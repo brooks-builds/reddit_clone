@@ -64,6 +64,17 @@
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                         @csrf
                                     </form>
+
+                                    <a class="dropdown-item" href="#"
+                                       onclick="event.preventDefault();
+                                                     document.getElementById('delete-form').submit();">
+                                        Delete Account
+                                    </a>
+
+                                    <form id="delete-form" action="/users/{{ Auth::id() }}" method="POST" style="display: none;">
+                                        @csrf
+                                        @method('DELETE')
+                                    </form>
                                 </div>
                             </li>
                         @endguest
