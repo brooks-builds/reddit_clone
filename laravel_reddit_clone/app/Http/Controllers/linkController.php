@@ -32,4 +32,16 @@ class linkController extends Controller
 
         return redirect($previousUrl);
     }
+
+    function store(Request $request)
+    {
+        $link = $request->validate([
+            'link' => 'required',
+            'title' => 'required'
+        ]);
+
+        Link::create($link);
+
+        return redirect('/');
+    }
 }

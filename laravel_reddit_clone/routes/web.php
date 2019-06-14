@@ -17,6 +17,7 @@ Route::post('/comments', 'commentsController@store');
 
 Route::post('/links/{id}/upvote', 'linkController@upvote');
 Route::post('/links/{id}/downvote', 'linkController@downvote');
+Route::post('/links', 'linkController@store');
 
 Auth::routes();
 
